@@ -7,25 +7,6 @@ from writer import Writer
 from read_files import Reader
 from tkinter import ttk, messagebox
 
-# def checkpoint_save(index):
-#     with open('checkpoint.txt', 'w') as f:
-#         f.write(str(index))
-
-# def checkpoint_load():
-#     try:
-#         with open('checkpoint.txt', 'r') as f:
-#             return int(f.read())
-#     except FileNotFoundError:
-#         return 0
-
-# def correct_ner_tags_writer(tokens, ner_tags, file_exists):
-#     with open('final_augmented_dataset.csv', 'a', newline='') as csvfile:
-#         fieldnames = ['tokens', 'ner_tags']
-#         writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
-#         if not file_exists:
-#             writer.writeheader()
-#         writer.writerow({'tokens': json.dumps(tokens), 'ner_tags': json.dumps(ner_tags)})
-
 class mainUI:
     def __init__(self, root, df):
         self.root = root
@@ -136,14 +117,3 @@ class mainUI:
         self.current_index += 1
         Checkpoint.checkpoint_save(self.current_index)
         self.load_row(self.current_index)
-
-# if __name__ == "__main__":
-
-#     df = pd.read_csv('annotated_new_dataset.csv')
-#     df['tokens'] = df['tokens'].apply(json.loads)
-#     df['ner_tags'] = df['ner_tags'].apply(json.loads)
-
-#     root = tk.Tk()
-#     root.title("The Annotator")
-#     app = TheAnnotator(root, df)
-#     root.mainloop()
