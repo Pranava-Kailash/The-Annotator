@@ -33,10 +33,6 @@ This configuration file contains settings and parameters used across the project
 - **file_to_annotate**: Specifies the file that contains the data to be annotated.
 - **ner_tags**: Defines the list of entity tags used for annotation.
 
-### 7. `annotated_new_dataset.csv`
-
-This file is the output produced after running the annotation process. It contains the annotated data with the entity tags defined in `settings.json`.
-
 ## Setup and Installation
 
 1. **Clone the repository:**
@@ -44,3 +40,26 @@ This file is the output produced after running the annotation process. It contai
    ```bash
    git clone <repository-url>
    ```
+2. **Adjust Setting json as you wish:**
+
+   ```bash
+   file_to_annotate: file_name.csv
+   ner_tags: ["enter","list","of","entities"]
+   ```
+
+3. **Run the command from the root directory**
+
+   ```bash
+   python main.py
+   ```
+
+## How it works
+
+f you need to alter or create new annotations for your NER model, this script can help manage those tasks efficiently. Simply enter your file name in the settings and specify the tags you wish to use. Once you run the command python main.py, you'll see a screen similar to this:
+
+![Image of the annotator](https://github.com/user-attachments/assets/422704b9-a8ce-401a-ac5e-a983be2d5722)
+
+The interface includes an "Update Tag" button to modify the NER tags, a "Next Sentence" button to proceed to the next row of tokens and NER tags, and an "Exit" button that saves the current sentence and remembers where you left off.
+**Note: This script assumes that there are only two columns in the dataset, namely "tokens" and "ner_tags".**
+
+   
