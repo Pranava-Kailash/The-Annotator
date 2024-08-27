@@ -1,0 +1,5 @@
+{
+    "file_to_annotate": "annotated_new_dataset.csv",
+    "ner_tags": ["O", "B-Malware", "I-Malware", "B-Indicator", "I-Indicator", "B-Organization", "I-Organization","B-Threat_group","I-Threat_group","B-Vulnerability","I-Vulnerability","B-System","I-System","B-Date","I-Date","B-Location","I-Location"]
+
+}
